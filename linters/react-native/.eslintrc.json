@@ -1,0 +1,37 @@
+// Use this file as a starting point for your project's .eslintrc.
+// Copy this file, and add rule overrides as needed.
+
+// React Native:
+// Notes:
+//   - React Native is currently incompatible with the .jsx extension.
+//   - "babel-eslint" currently throws a false positive "no-undef" with ES7 class properties.
+{
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "plugins": ["react", "react-native", "jsx-a11y", "import"],
+    "rules": {
+        "func-names": ["error", "as-needed"],
+        "func-style": ["warn", "declaration"],
+        "indent": ["error", 4],
+        "no-nested-ternary": ["warn"],
+        "no-underscore-dangle": ["off"],
+        "no-undef": ["warn"],
+        "object-shorthand": ["off", "methods"],
+        "import/exports-last": ["error"],
+        "import/newline-after-import": ["error", { "count": 2 }],
+        "import/order": ["error", { "newlines-between": "never" }],
+        "import/prefer-default-export": ["warn"],
+        "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
+        "react/jsx-indent": ["error", 4],
+        "react/jsx-indent-props": ["error", 4],
+        "react/require-optimization": ["error"],
+        "react-native/no-unused-styles": ["error"],
+        "react-native/split-platform-components": ["error"],
+        "react-native/no-inline-styles": ["error"],
+        "react-native/no-color-literals": ["error"]
+    },
+    "globals": {
+        "alert": false,
+        "fetch": false
+    }
+}
