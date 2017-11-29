@@ -1,2 +1,2 @@
-src/__tests__/*
+__tests__/*
 *.json

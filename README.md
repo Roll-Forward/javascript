@@ -1316,6 +1316,9 @@ Other Style Guides
   <a name="modules--prefer-default-export"></a>
   - [10.6](#modules--prefer-default-export) In modules with a single export, prefer default export over named export.
  eslint: [`import/prefer-default-export`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md)
+
+    > **Amendment:** [10.6-A](#modules--prefer-default-export-a) Prefer named export over default export.
+
     > Why? To encourage more files that only ever export one thing, which is better for readability and maintainability.
 
     ```javascript
@@ -3529,6 +3532,30 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     function foo() {
       // ...
     }
+    ```
+
+ <a name="modules--prefer-default-export-a"></a>
+  - [10.6-A](#modules--prefer-default-export-a) In modules with a single export, prefer named export over default export or block export.
+ eslint: [`import/prefer-default-export`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md)
+    > Why? Named exports make refactoring across project files easier. It can also reduce bundle size when tree-shaking with a tool like Webpack.
+
+    ```javascript
+    // bad
+    export default function foo() {}
+
+    // bad
+    function foo() {}
+    function bar() {}
+    export { foo, bar };
+
+    // good
+    export function foo() {}
+
+    // good
+    function foo() {}
+    function bar() {}
+    export { foo };
+    export { bar };
     ```
 
 <a name="comparison--nested-ternaries-a"></a><a name="15.6-A"></a>
