@@ -11,7 +11,7 @@
     "plugins": ["react", "react-native", "jsx-a11y", "import"],
     "rules": {
         "func-names": ["error", "as-needed"],
-        "func-style": ["warn", "declaration"],
+        "func-style": ["warn", "declaration", { "allowArrowFunctions": true }],
         "indent": ["error", 4],
         "no-nested-ternary": ["warn"],
         "no-underscore-dangle": ["off"],
